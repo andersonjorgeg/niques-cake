@@ -199,12 +199,12 @@ function sendOrder() {
 
     const total = document.getElementById('totalValue').textContent;
 
-    const message = `Olá, gostaria de fazer um pedido:\n\n` +
+    const message = `--TESTE--Olá, gostaria de fazer um pedido:\n\n` +
                     `Tamanho do Bolo: ${tamanho}\n` +
                     `Sabor da Massa: ${sabor}\n` +
                     `Recheio: ${recheio}\n` +
                     `Adicionais: ${adicionais.join(', ')}\n\n` +
-                    `Estou aguardando meu pedido ser finalizado...\n`;
+                    `Estou aguardando meu pedido ser finalizado... --TESTE--\n`;
 
     const url = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`;
     window.open(url, '_blank');
