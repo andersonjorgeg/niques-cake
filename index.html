@@ -185,6 +185,35 @@ function atualizarEstadoTopo3d() {
     alertTopo3d.classList.toggle('hidden', !formData.extras.topo3d);
 }
 
+// Função que envia o pedido via WhatsApp
+function sendOrder() {
+    const phoneNumber = "5521980469856"; // Número de telefone no formato internacional
+    const tamanho = document.getElementById('size').value;
+    const sabor = document.getElementById('flavor').value;
+    const recheio = document.getElementById('filling').value;
+    const adicionais = [];
+
+    if (formData.extras.topoSimples) adicionais.push("Topo Simples");
+    if (formData.extras.frutas) adicionais.push("Adicional de Frutas");
+    if (formData.extras.topo3d) adicionais.push("Topo 3D");
+
+    const total = document.getElementById('totalValue').textContent;
+
+    const message = `Olá, gostaria de fazer um pedido:\n\n` +
+                    `Tamanho do Bolo: ${tamanho}\n` +
+                    `Sabor da Massa: ${sabor}\n` +
+                    `Recheio: ${recheio}\n` +
+                    `Adicionais: ${adicionais.join(', ')}\n\n` +
+                    `Valor Total: ${total}\n\n` +
+                    `Formas de Pagamento: Cartão de Crédito, Cartão de Débito, Dinheiro, Pix\n` +
+                    `Contato: (21) 98046-9856\n` +
+                    `Instagram: @niquescake\n` +
+                    `Local de Retirada: Condomínio 5 de julho`;
+
+    const url = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`;
+    window.open(url, '_blank');
+}
+
 // Quando o DOM estiver carregado
 document.addEventListener("DOMContentLoaded", () => {
     // Listener para mudança de recheio
@@ -212,6 +241,9 @@ document.addEventListener("DOMContentLoaded", () => {
         formData.extras.topo3d = this.checked;
         atualizarEstadoTopo3d();
     });
+
+    // Listener para botão de enviar pedido
+    document.getElementById('sendOrder').addEventListener('click', sendOrder);
 
     // Listeners para outros campos (tamanho e sabor)
     const campos = ['size', 'flavor'];
