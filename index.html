@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Orçamento - Niques Cake</title>
+  <!-- CDN do Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-100 p-4">
+  <div class="max-w-lg mx-auto bg-white rounded-lg shadow-md p-6">
+    <!-- Cabeçalho -->
+    <header class="text-center mb-6">
+      <h1 class="text-3xl font-bold text-gray-800">Orçamento - Niques Cake</h1>
+    </header>
+
+    <!-- Formulário -->
+    <form id="cakeForm" class="space-y-4">
+      <!-- Tamanho do Bolo -->
+      <div>
+        <label for="size" class="block font-semibold mb-1">Tamanho do Bolo</label>
+        <select id="size" name="size" class="w-full p-2 border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-blue-500">
+          <option value="13cm">13cm (7 a 10 fatias) - R$ 85,00</option>
+          <option value="15cm">15cm (10 a 15 fatias) - R$ 160,00</option>
+          <option value="20cm">20cm (20 a 25 fatias) - R$ 180,00</option>
+          <option value="25cm">25cm (30 a 35 fatias) - R$ 200,00</option>
+          <option value="30cm">30cm (50 fatias) - R$ 250,00</option>
+        </select>
+      </div>
+
+      <!-- Sabor da Massa -->
+      <div>
+        <label for="flavor" class="block font-semibold mb-1">Sabor da Massa</label>
+        <select id="flavor" name="flavor" class="w-full p-2 border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-blue-500">
+          <option value="baunilha">Baunilha</option>
+          <option value="chocolate">Chocolate</option>
+          <option value="red_velvet">Red Velvet</option>
+        </select>
+      </div>
+
+      <!-- Recheio -->
+      <div>
+        <label for="filling" class="block font-semibold mb-1">Recheio</label>
+        <select id="filling" name="filling" class="w-full p-2 border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-blue-500">
+          <option value="brigadeiro">Brigadeiro</option>
+          <option value="beijinho">Beijinho</option>
+          <option value="creme_branco">Creme Branco</option>
+          <option value="amendoim">Amendoim</option>
+          <option value="doce_leite">Doce de Leite</option>
+          <option value="doce_leite_ameixa">Doce de Leite com Ameixa</option>
+          <option value="ninho_nutella">Ninho com Nutella</option>
+          <option value="creme_morango">Creme com Morango</option>
+          <option value="abacaxi_coco">Abacaxi com Coco</option>
+        </select>
+      </div>
+
+      <!-- Adicionais -->
+      <div>
+        <span class="block font-semibold mb-1">Adicionais</span>
+        <div class="space-y-2">
+          <div class="flex items-center">
+            <input type="checkbox" id="topoSimples" name="topoSimples" class="h-4 w-4 text-blue-600 border-gray-300 rounded" />
+            <label for="topoSimples" class="ml-2 text-gray-700">Topo Simples (+R$ 10,00)</label>
+          </div>
+          <div class="flex items-center">
+            <input type="checkbox" id="frutas" name="frutas" class="h-4 w-4 text-blue-600 border-gray-300 rounded" />
+            <label for="frutas" class="ml-2 text-gray-700">Adicional de Frutas (a partir de R$ 10,00)</label>
+          </div>
+          <div class="flex items-center">
+            <input type="checkbox" id="topo3d" name="topo3d" class="h-4 w-4 text-blue-600 border-gray-300 rounded" />
+            <label for="topo3d" class="ml-2 text-gray-700">Topo 3D (Consultar valor)</label>
+          </div>
+        </div>
+      </div>
+    </form>
+
+    <!-- Alerta para Adicional de Frutas (inicia oculto) -->
+    <div id="alertFrutas" class="hidden flex items-center bg-yellow-100 border border-yellow-300 text-yellow-800 p-3 rounded mt-4">
+      <svg class="h-5 w-5 mr-2" fill="currentColor" viewBox="0 0 16 16">
+        <path d="M8 1a7 7 0 1 1 0 14A7 7 0 0 1 8 1zm.93 10.588-1 4a.5.5 0 0 1-.95 0l-1-4a.5.5 0 0 1 .47-.652h2.06a.5.5 0 0 1 .47.652zM8 4a.905.905 0 1 0 0 1.81A.905.905 0 0 0 8 4z"/>
+      </svg>
+      <p class="text-sm">O valor do adicional de frutas será calculado a partir de R$ 10,00, podendo variar conforme o tamanho do bolo desejado.</p>
+    </div>
+
+    <!-- Alerta para Topo 3D (inicia oculto) -->
+    <div id="alertTopo3d" class="hidden flex items-center bg-yellow-100 border border-yellow-300 text-yellow-800 p-3 rounded mt-4">
+      <svg class="h-5 w-5 mr-2" fill="currentColor" viewBox="0 0 16 16">
+        <path d="M8 1a7 7 0 1 1 0 14A7 7 0 0 1 8 1zm.93 10.588-1 4a.5.5 0 0 1-.95 0l-1-4a.5.5 0 0 1 .47-.652h2.06a.5.5 0 0 1 .47.652zM8 4a.905.905 0 1 0 0 1.81A.905.905 0 0 0 8 4z"/>
+      </svg>
+      <p class="text-sm">O valor do Topo 3D é personalizado conforme a complexidade da decoração. Por favor, entre em contato para uma cotação detalhada.</p>
+    </div>
+
+    <!-- Seção do Valor Total -->
+    <div class="bg-gray-200 p-4 rounded mt-6 text-center">
+      <h3 class="text-xl font-semibold">Valor Total do Orçamento</h3>
+      <p id="totalValue" class="text-3xl font-bold text-green-600 mt-2">R$ 85,00*</p>
+      <p class="text-sm text-gray-600 mt-2">*Valor base sem adicionais variáveis (frutas e topo 3D)</p>
+      <p class="text-sm text-gray-600">Encomendas mediante sinal de 50% do valor</p>
+    </div>
+
+    <!-- Informações de Contato -->
+    <div class="text-center text-gray-600 text-sm mt-4 space-y-1">
+      <p>Formas de Pagamento: Cartão de Crédito | Cartão de Débito | Dinheiro | Pix</p>
+      <p>Contato: (21) 98046-9856</p>
+      <p>Instagram: @niquescake</p>
+      <p>Local de Retirada: Condomínio 5 de julho</p>
+    </div>
+
+    <!-- Botão para enviar pedido via WhatsApp -->
+    <div class="mt-6 text-center">
+      <button id="sendOrder" class="bg-green-500 text-white px-4 py-2 rounded hover:bg-green-600 focus:outline-none focus:ring-2 focus:ring-green-400">
+        Enviar Pedido por WhatsApp
+      </button>
+    </div>
+  </div>
+
+  <!-- JavaScript -->
+  <script>
+    // Tabela de preços
+    const prices = {
+      sizes: {
+        '13cm': 85,
+        '15cm': 160,
+        '20cm': 180,
+        '25cm': 200,
+        '30cm': 250
+      },
+      flavors: {
+        baunilha: 0,
+        chocolate: 0,
+        red_velvet: 0
+      },
+      fillings: {
+        brigadeiro: 0,
+        beijinho: 0,
+        creme_branco: 0,
+        amendoim: 0,
+        doce_leite: 0,
+        doce_leite_ameixa: 0,
+        ninho_nutella: 0,
+        creme_morango: 0,
+        abacaxi_coco: 0
+      },
+      extras: {
+        topoSimples: 10
+        // extras.frutas e extras.topo3d podem ter seus valores definidos futuramente, se necessário
+      }
+    };
+
+    // Estado do formulário
+    const formData = {
+      size: "13cm",
+      flavor: "baunilha",
+      filling: "brigadeiro",
+      extras: {
+        topoSimples: false,
+        frutas: false,
+        topo3d: false
+      }
+    };
+
+    // Função para calcular o total
+    function calculateTotal(data) {
+      let total = prices.sizes[data.size];
+      if (data.extras.topoSimples) total += prices.extras.topoSimples;
+      // Extras como frutas e topo3d podem ser incorporados posteriormente à lógica de preços
+      return total;
+    }
+
+    // Atualiza o valor exibido
+    function updateTotal() {
+      const totalValueElement = document.getElementById('totalValue');
+      const total = calculateTotal(formData);
+      totalValueElement.textContent = "R$ " + total.toFixed(2) + "*";
+    }
+
+    // Atualiza a exibição do alerta de frutas
+    function updateAlertFrutas() {
+      const alertEl = document.getElementById('alertFrutas');
+      formData.extras.frutas ? alertEl.classList.remove('hidden') : alertEl.classList.add('hidden');
+    }
+
+    // Atualiza a exibição do alerta do topo 3D
+    function updateAlertTopo3d() {
+      const alertEl = document.getElementById('alertTopo3d');
+      formData.extras.topo3d ? alertEl.classList.remove('hidden') : alertEl.classList.add('hidden');
+    }
+
+    // Função para tratar as mudanças dos campos do formulário
+    function handleChange(field, value) {
+      if (field === 'extras') {
+        formData.extras[value] = !formData.extras[value];
+        if (value === 'frutas') updateAlertFrutas();
+        if (value === 'topo3d') updateAlertTopo3d();
+      } else {
+        formData[field] = value;
+      }
+      updateTotal();
+    }
+
+    // Função para enviar o pedido via WhatsApp
+    function sendOrder() {
+      // Monta a mensagem com os dados do pedido
+      let message = `Olá, gostaria de fazer o pedido de um bolo com as seguintes especificações:\n\n`;
+      message += `• Tamanho: ${formData.size}\n`;
+      message += `• Sabor: ${formData.flavor}\n`;
+      message += `• Recheio: ${formData.filling}\n`;
+      
+      // Lista os adicionais selecionados, se houver
+      let adicionais = [];
+      if (formData.extras.topoSimples) adicionais.push("Topo Simples (+R$ 10,00)");
+      if (formData.extras.frutas) adicionais.push("Adicional de Frutas (a partir de R$ 10,00)");
+      if (formData.extras.topo3d) adicionais.push("Topo 3D (Consultar valor)");
+      
+      if (adicionais.length > 0) {
+        message += `• Adicionais: ${adicionais.join(', ')}\n`;
+      }
+      
+      // Adiciona o valor total
+      const total = calculateTotal(formData).toFixed(2);
+      message += `\nValor Total: R$ ${total}\n`;
+      message += `\nGostaria de confirmar esse pedido.`;
+
+      // Número do WhatsApp da empresa (formato internacional, sem espaços ou traços)
+      const whatsappNumber = "5521980469856";
+      const url = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(message)}`;
+      
+      // Abre o link do WhatsApp em uma nova aba
+      window.open(url, "_blank");
+    }
+
+    // Configura os eventos após o carregamento do DOM
+    document.addEventListener("DOMContentLoaded", () => {
+      // Eventos para os selects
+      document.getElementById("size").addEventListener("change", (e) => handleChange('size', e.target.value));
+      document.getElementById("flavor").addEventListener("change", (e) => handleChange('flavor', e.target.value));
+      document.getElementById("filling").addEventListener("change", (e) => handleChange('filling', e.target.value));
+
+      // Eventos para os checkboxes
+      document.getElementById("topoSimples").addEventListener("change", () => handleChange('extras', 'topoSimples'));
+      document.getElementById("frutas").addEventListener("change", () => handleChange('extras', 'frutas'));
+      document.getElementById("topo3d").addEventListener("change", () => handleChange('extras', 'topo3d'));
+
+      // Evento para o botão de enviar pedido
+      document.getElementById("sendOrder").addEventListener("click", sendOrder);
+      
+      // Inicializa o total e os alertas
+      updateTotal();
+      updateAlertFrutas();
+      updateAlertTopo3d();
+    });
+  </script>
+</body>
+</html>
