@@ -7,19 +7,19 @@
   <!-- CDN do Tailwind CSS -->
   <script src="https://cdn.tailwindcss.com"></script>
 </head>
-<body class="bg-gray-100 p-4">
+<body class="bg-gray-500 p-4">
   <div class="max-w-lg mx-auto bg-white rounded-lg shadow-md p-6">
     <!-- Cabeçalho -->
     <header class="text-center mb-6">
-      <h1 class="text-3xl font-bold text-gray-800">Orçamento - Niques Cake</h1>
+      <h1 class="text-3xl font-bold text-pink-500">Orçamento - Niques Cake</h1>
     </header>
 
     <!-- Formulário -->
     <form id="cakeForm" class="space-y-4">
       <!-- Tamanho do Bolo -->
       <div>
-        <label for="size" class="block font-semibold mb-1">Tamanho do Bolo</label>
-        <select id="size" name="size" class="w-full p-2 border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-blue-500">
+        <label for="size" class="block font-semibold mb-1 text-gray-700">Tamanho do Bolo</label>
+        <select id="size" name="size" class="w-full p-2 border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-pink-500">
           <option value="13cm">13cm (7 a 10 fatias) - R$ 85,00</option>
           <option value="15cm">15cm (10 a 15 fatias) - R$ 160,00</option>
           <option value="20cm">20cm (20 a 25 fatias) - R$ 180,00</option>
@@ -30,8 +30,8 @@
 
       <!-- Sabor da Massa -->
       <div>
-        <label for="flavor" class="block font-semibold mb-1">Sabor da Massa</label>
-        <select id="flavor" name="flavor" class="w-full p-2 border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-blue-500">
+        <label for="flavor" class="block font-semibold mb-1 text-gray-700">Sabor da Massa</label>
+        <select id="flavor" name="flavor" class="w-full p-2 border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-pink-500">
           <option value="baunilha">Baunilha</option>
           <option value="chocolate">Chocolate</option>
           <option value="red_velvet">Red Velvet</option>
@@ -40,8 +40,8 @@
 
       <!-- Recheio -->
       <div>
-        <label for="filling" class="block font-semibold mb-1">Recheio</label>
-        <select id="filling" name="filling" class="w-full p-2 border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-blue-500">
+        <label for="filling" class="block font-semibold mb-1 text-gray-700">Recheio</label>
+        <select id="filling" name="filling" class="w-full p-2 border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-pink-500">
           <option value="brigadeiro">Brigadeiro</option>
           <option value="beijinho">Beijinho</option>
           <option value="creme_branco">Creme Branco</option>
@@ -56,19 +56,19 @@
 
       <!-- Adicionais -->
       <div>
-        <span class="block font-semibold mb-1">Adicionais</span>
+        <span class="block font-semibold mb-1 text-gray-700">Adicionais</span>
         <div class="space-y-2">
           <div class="flex items-center">
-            <input type="checkbox" id="topoSimples" name="topoSimples" class="h-4 w-4 text-blue-600 border-gray-300 rounded" />
-            <label for="topoSimples" class="ml-2 text-gray-700">Topo Simples (+R$ 10,00)</label>
+            <input type="checkbox" id="topoSimples" name="topoSimples" class="h-4 w-4 text-pink-500 border-gray-300 rounded" />
+            <label for="topoSimples" class="ml-2 text-gray-800">Topo Simples (+R$ 10,00)</label>
           </div>
           <div class="flex items-center">
-            <input type="checkbox" id="frutas" name="frutas" class="h-4 w-4 text-blue-600 border-gray-300 rounded" />
-            <label for="frutas" class="ml-2 text-gray-700">Adicional de Frutas (a partir de R$ 10,00)</label>
+            <input type="checkbox" id="frutas" name="frutas" class="h-4 w-4 text-pink-500 border-gray-300 rounded" />
+            <label for="frutas" class="ml-2 text-gray-800">Adicional de Frutas</label>
           </div>
           <div class="flex items-center">
-            <input type="checkbox" id="topo3d" name="topo3d" class="h-4 w-4 text-blue-600 border-gray-300 rounded" />
-            <label for="topo3d" class="ml-2 text-gray-700">Topo 3D (Consultar valor)</label>
+            <input type="checkbox" id="topo3d" name="topo3d" class="h-4 w-4 text-pink-500 border-gray-300 rounded" />
+            <label for="topo3d" class="ml-2 text-gray-800">Topo 3D (Consultar valor)</label>
           </div>
         </div>
       </div>
@@ -79,7 +79,7 @@
       <svg class="h-5 w-5 mr-2" fill="currentColor" viewBox="0 0 16 16">
         <path d="M8 1a7 7 0 1 1 0 14A7 7 0 0 1 8 1zm.93 10.588-1 4a.5.5 0 0 1-.95 0l-1-4a.5.5 0 0 1 .47-.652h2.06a.5.5 0 0 1 .47.652zM8 4a.905.905 0 1 0 0 1.81A.905.905 0 0 0 8 4z"/>
       </svg>
-      <p class="text-sm">O valor do adicional de frutas será calculado a partir de R$ 10,00, podendo variar conforme o tamanho do bolo desejado.</p>
+      <p class="text-sm">O valor do adicional de frutas será calculado conforme o tamanho do bolo desejado.</p>
     </div>
 
     <!-- Alerta para Topo 3D (inicia oculto) -->
@@ -92,14 +92,14 @@
 
     <!-- Seção do Valor Total -->
     <div class="bg-gray-200 p-4 rounded mt-6 text-center">
-      <h3 class="text-xl font-semibold">Valor Total do Orçamento</h3>
+      <h3 class="text-xl font-semibold text-pink-500">Valor Total do Orçamento</h3>
       <p id="totalValue" class="text-3xl font-bold text-green-600 mt-2">R$ 85,00*</p>
-      <p class="text-sm text-gray-600 mt-2">*Valor base sem adicionais variáveis (frutas e topo 3D)</p>
-      <p class="text-sm text-gray-600">Encomendas mediante sinal de 50% do valor</p>
+      <p class="text-sm text-gray-800 mt-2">*Valor base sem adicionais variáveis (frutas e topo 3D)</p>
+      <p class="text-sm text-gray-800">Encomendas mediante sinal de 50% do valor</p>
     </div>
 
     <!-- Informações de Contato -->
-    <div class="text-center text-gray-600 text-sm mt-4 space-y-1">
+    <div class="text-center text-gray-800 text-sm mt-4 space-y-1">
       <p>Formas de Pagamento: Cartão de Crédito | Cartão de Débito | Dinheiro | Pix</p>
       <p>Contato: (21) 98046-9856</p>
       <p>Instagram: @niquescake</p>
@@ -108,7 +108,7 @@
 
     <!-- Botão para enviar pedido via WhatsApp -->
     <div class="mt-6 text-center">
-      <button id="sendOrder" class="bg-green-500 text-white px-4 py-2 rounded hover:bg-green-600 focus:outline-none focus:ring-2 focus:ring-green-400">
+      <button id="sendOrder" class="bg-pink-500 text-white px-4 py-2 rounded hover:bg-pink-600 focus:outline-none focus:ring-2 focus:ring-pink-500">
         Enviar Pedido por WhatsApp
       </button>
     </div>
@@ -116,139 +116,116 @@
 
   <!-- JavaScript -->
   <script>
-    // Tabela de preços
-    const prices = {
-      sizes: {
-        '13cm': 85,
-        '15cm': 160,
-        '20cm': 180,
-        '25cm': 200,
-        '30cm': 250
-      },
-      flavors: {
-        baunilha: 0,
-        chocolate: 0,
-        red_velvet: 0
-      },
-      fillings: {
-        brigadeiro: 0,
-        beijinho: 0,
-        creme_branco: 0,
-        amendoim: 0,
-        doce_leite: 0,
-        doce_leite_ameixa: 0,
-        ninho_nutella: 0,
-        creme_morango: 0,
-        abacaxi_coco: 0
-      },
-      extras: {
-        topoSimples: 10
-        // extras.frutas e extras.topo3d podem ter seus valores definidos futuramente, se necessário
-      }
-    };
-
-    // Estado do formulário
-    const formData = {
-      size: "13cm",
-      flavor: "baunilha",
-      filling: "brigadeiro",
-      extras: {
-        topoSimples: false,
-        frutas: false,
-        topo3d: false
-      }
-    };
-
-    // Função para calcular o total
-    function calculateTotal(data) {
-      let total = prices.sizes[data.size];
-      if (data.extras.topoSimples) total += prices.extras.topoSimples;
-      // Extras como frutas e topo3d podem ser incorporados posteriormente à lógica de preços
-      return total;
+// Configuração do sistema com valores constantes
+const CONFIG = {
+    // Lista de recheios que exigem frutas automaticamente
+    RECHEIOS_COM_FRUTAS: ['doce_leite_ameixa', 'creme_morango', 'abacaxi_coco'],
+    // Tabela de preços dos produtos
+    PRECOS: {
+        // Preços por tamanho do bolo
+        sizes: {
+            '13cm': 85,  // Valor para bolo de 13cm
+            '15cm': 160, // Valor para bolo de 15cm
+            '20cm': 180, // Valor para bolo de 20cm
+            '25cm': 200, // Valor para bolo de 25cm
+            '30cm': 250  // Valor para bolo de 30cm
+        },
+        // Preços dos adicionais
+        extras: {
+            topoSimples: 10, // Valor do topo simples
+        }
     }
+};
 
-    // Atualiza o valor exibido
-    function updateTotal() {
-      const totalValueElement = document.getElementById('totalValue');
-      const total = calculateTotal(formData);
-      totalValueElement.textContent = "R$ " + total.toFixed(2) + "*";
+// Estado inicial do formulário
+const formData = {
+    size: "13cm",     // Tamanho padrão
+    flavor: "baunilha", // Sabor padrão
+    filling: "brigadeiro", // Recheio padrão
+    extras: {
+        topoSimples: false, // Sem topo simples
+        frutas: false,      // Sem frutas
+        topo3d: false       // Sem topo 3D
     }
+};
 
-    // Atualiza a exibição do alerta de frutas
-    function updateAlertFrutas() {
-      const alertEl = document.getElementById('alertFrutas');
-      formData.extras.frutas ? alertEl.classList.remove('hidden') : alertEl.classList.add('hidden');
-    }
+// Função que gerencia o estado do adicional de frutas
+function atualizarEstadoFrutas() {
+    // Obtém referências dos elementos do DOM
+    const frutasCheckbox = document.getElementById('frutas');
+    const alertFrutas = document.getElementById('alertFrutas');
+    
+    // Verifica se o recheio atual exige frutas
+    const precisaFrutas = CONFIG.RECHEIOS_COM_FRUTAS.includes(formData.filling);
+    
+    // Atualiza o estado do checkbox
+    frutasCheckbox.checked = precisaFrutas;  // Marca/desmarca
+    frutasCheckbox.disabled = precisaFrutas; // Habilita/desabilita
+    formData.extras.frutas = precisaFrutas;  // Atualiza estado
+    
+    // Controla visibilidade dos elementos relacionados
+    alertFrutas.classList.toggle('hidden', !precisaFrutas);
+    
+    // Recalcula o total após alterações
+    atualizarTotal();
+}
 
-    // Atualiza a exibição do alerta do topo 3D
-    function updateAlertTopo3d() {
-      const alertEl = document.getElementById('alertTopo3d');
-      formData.extras.topo3d ? alertEl.classList.remove('hidden') : alertEl.classList.add('hidden');
-    }
+// Função que calcula e atualiza o valor total
+function atualizarTotal() {
+    const total = CONFIG.PRECOS.sizes[formData.size] +
+        (formData.extras.topoSimples ? CONFIG.PRECOS.extras.topoSimples : 0);
+    
+    // Atualiza o texto do valor total na tela
+    document.getElementById('totalValue').textContent = `R$ ${total.toFixed(2)}*`;
+}
 
-    // Função para tratar as mudanças dos campos do formulário
-    function handleChange(field, value) {
-      if (field === 'extras') {
-        formData.extras[value] = !formData.extras[value];
-        if (value === 'frutas') updateAlertFrutas();
-        if (value === 'topo3d') updateAlertTopo3d();
-      } else {
-        formData[field] = value;
-      }
-      updateTotal();
-    }
+// Função que gerencia o estado do adicional de topo 3D
+function atualizarEstadoTopo3d() {
+    const alertTopo3d = document.getElementById('alertTopo3d');
+    alertTopo3d.classList.toggle('hidden', !formData.extras.topo3d);
+}
 
-    // Função para enviar o pedido via WhatsApp
-    function sendOrder() {
-      // Monta a mensagem com os dados do pedido
-      let message = `--TESTE-- Olá, gostaria de fazer o pedido de um bolo com as seguintes especificações:\n\n`;
-      message += `• Tamanho: ${formData.size}\n`;
-      message += `• Sabor: ${formData.flavor}\n`;
-      message += `• Recheio: ${formData.filling}\n`;
-      
-      // Lista os adicionais selecionados, se houver
-      let adicionais = [];
-      if (formData.extras.topoSimples) adicionais.push("Topo Simples (+R$ 10,00)");
-      if (formData.extras.frutas) adicionais.push("Adicional de Frutas (a partir de R$ 10,00)");
-      if (formData.extras.topo3d) adicionais.push("Topo 3D (Consultar valor)");
-      
-      if (adicionais.length > 0) {
-        message += `• Adicionais: ${adicionais.join(', ')}\n`;
-      }
-      
-      // Adiciona o valor total
-      const total = calculateTotal(formData).toFixed(2);
-      message += `\nValor Total: R$ ${total}\n`;
-      message += `\nGostaria de confirmar esse pedido. --TESTE--`;
-
-      // Número do WhatsApp da empresa (formato internacional, sem espaços ou traços)
-      const whatsappNumber = "5521980469856";
-      const url = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(message)}`;
-      
-      // Abre o link do WhatsApp em uma nova aba
-      window.open(url, "_blank");
-    }
-
-    // Configura os eventos após o carregamento do DOM
-    document.addEventListener("DOMContentLoaded", () => {
-      // Eventos para os selects
-      document.getElementById("size").addEventListener("change", (e) => handleChange('size', e.target.value));
-      document.getElementById("flavor").addEventListener("change", (e) => handleChange('flavor', e.target.value));
-      document.getElementById("filling").addEventListener("change", (e) => handleChange('filling', e.target.value));
-
-      // Eventos para os checkboxes
-      document.getElementById("topoSimples").addEventListener("change", () => handleChange('extras', 'topoSimples'));
-      document.getElementById("frutas").addEventListener("change", () => handleChange('extras', 'frutas'));
-      document.getElementById("topo3d").addEventListener("change", () => handleChange('extras', 'topo3d'));
-
-      // Evento para o botão de enviar pedido
-      document.getElementById("sendOrder").addEventListener("click", sendOrder);
-      
-      // Inicializa o total e os alertas
-      updateTotal();
-      updateAlertFrutas();
-      updateAlertTopo3d();
+// Quando o DOM estiver carregado
+document.addEventListener("DOMContentLoaded", () => {
+    // Listener para mudança de recheio
+    document.getElementById('filling').addEventListener('change', function(e) {
+        formData.filling = e.target.value; // Atualiza estado
+        atualizarEstadoFrutas();          // Atualiza interface
     });
-  </script>
+
+    // Listener para checkbox de frutas
+    document.getElementById('frutas').addEventListener('change', function() {
+        // Só permite alteração se não for recheio que exige frutas
+        if (!CONFIG.RECHEIOS_COM_FRUTAS.includes(formData.filling)) {
+            formData.extras.frutas = this.checked;
+        }
+    });
+
+    // Listener para checkbox de topo simples
+    document.getElementById('topoSimples').addEventListener('change', function() {
+        formData.extras.topoSimples = this.checked;
+        atualizarTotal();
+    });
+
+    // Listener para checkbox de topo 3D
+    document.getElementById('topo3d').addEventListener('change', function() {
+        formData.extras.topo3d = this.checked;
+        atualizarEstadoTopo3d();
+    });
+
+    // Listeners para outros campos (tamanho e sabor)
+    const campos = ['size', 'flavor'];
+    campos.forEach(campo => {
+        document.getElementById(campo).addEventListener('change', (e) => {
+            formData[campo] = e.target.value; // Atualiza estado
+            atualizarTotal();                 // Recalcula total
+        });
+    });
+
+    // Inicialização do formulário
+    atualizarEstadoFrutas(); // Configura estado inicial das frutas
+    atualizarTotal();        // Calcula valor inicial
+});
+</script>
 </body>
 </html>
