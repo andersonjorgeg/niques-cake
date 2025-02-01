@@ -204,11 +204,7 @@ function sendOrder() {
                     `Sabor da Massa: ${sabor}\n` +
                     `Recheio: ${recheio}\n` +
                     `Adicionais: ${adicionais.join(', ')}\n\n` +
-                    `Valor Total: ${total}\n\n` +
-                    `Formas de Pagamento: Cartão de Crédito, Cartão de Débito, Dinheiro, Pix\n` +
-                    `Contato: (21) 98046-9856\n` +
-                    `Instagram: @niquescake\n` +
-                    `Local de Retirada: Condomínio 5 de julho`;
+                    `Estou aguardando meu pedido ser finalizado...\n`;
 
     const url = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`;
     window.open(url, '_blank');
