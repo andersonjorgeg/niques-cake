@@ -201,7 +201,7 @@
     // Função para enviar o pedido via WhatsApp
     function sendOrder() {
       // Monta a mensagem com os dados do pedido
-      let message = `Olá, gostaria de fazer o pedido de um bolo com as seguintes especificações:\n\n`;
+      let message = `--TESTE-- Olá, gostaria de fazer o pedido de um bolo com as seguintes especificações:\n\n`;
       message += `• Tamanho: ${formData.size}\n`;
       message += `• Sabor: ${formData.flavor}\n`;
       message += `• Recheio: ${formData.filling}\n`;
@@ -219,7 +219,7 @@
       // Adiciona o valor total
       const total = calculateTotal(formData).toFixed(2);
       message += `\nValor Total: R$ ${total}\n`;
-      message += `\nGostaria de confirmar esse pedido.`;
+      message += `\nGostaria de confirmar esse pedido. --TESTE--`;
 
       // Número do WhatsApp da empresa (formato internacional, sem espaços ou traços)
       const whatsappNumber = "5521980469856";
